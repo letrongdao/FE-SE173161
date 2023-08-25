@@ -1,0 +1,76 @@
+.film-container {
+    display: block;
+    border: black 1px solid;
+    height: auto;
+    background-color: rgb(244, 255, 255);
+}
+
+.film-item {
+    display: grid;
+    margin: 10px auto;
+    grid-template-columns: 1fr 6fr;
+    grid-template-rows: 3fr 1fr 2fr;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+    grid-template-areas: 
+        "image title"
+        "image info"
+        "image button";
+    width: 90%;
+    height: 200px;
+    border-bottom: black 1px solid;
+    border-top: black 1px solid;
+    justify-content: start;
+}
+
+.film-item:hover {
+    background-color: rgb(255, 255, 226);
+}
+
+.film-image {
+    grid-area: image;
+}
+
+.film-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.film-title {
+    grid-area: title;
+    justify-self: center;
+    text-transform: uppercase;
+    font-family: Rockwell;
+    font-size: 150%;
+    color: rgb(0, 110, 206);
+}
+
+.film-info {
+    font-family: Goudy Old Style;
+    justify-self: center;
+}
+
+.film-info h5 {
+    display: inline-block;
+    margin: 0 50px;
+}
+
+.film-button {
+    grid-area: button;
+    justify-self: center;
+}
+
+.film-button button {
+    margin: 15px auto;
+    text-decoration: none;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #000;
+    font-size: 100%;
+    font-family: Arial Black;
+}
+
+.film-button button:hover {
+    background-color: rgb(127, 182, 255);
+    cursor: pointer;
+}
