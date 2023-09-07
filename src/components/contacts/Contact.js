@@ -5,12 +5,7 @@ import * as Yup from 'yup';
 import './Contact.css'
 import Navbar from '../navbar/Navbar'
 import { useSelector, useDispatch } from 'react-redux'
-import { registered, unregistered } from './contactSlice';
-
 export default function Contact() {
-
-  const numbOfContacts = useSelector(state => state.contact.numbOfContacts)
-  const dispatch = useDispatch()
 
   const validateSchema = Yup.object({
     name: Yup.string().required('*Required'),
@@ -83,7 +78,7 @@ export default function Contact() {
           </div>
 
           <Button type='reset' disabled>Reset</Button>
-          <Button type='submit' onClick={dispatch(registered())}>Submit</Button>
+          <Button type='submit'>Submit</Button>
         </Form>
         )}
       </Formik>
