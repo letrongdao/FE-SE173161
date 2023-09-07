@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+.film-item {
+    display: grid;
+    margin: 0 auto 5px auto;
+    grid-template-columns: 2fr 8fr 1fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+    grid-template-areas: 
+        "image title released nation"
+        "image desc desc desc"
+        "image button button button";
+    width: 95%;
+    height: 300px;
+    border-bottom: black 2px solid;
+    border-top: black 1px groove;
+    justify-content: start;
+}
+
+.film-item:hover {
+    background-color: rgb(186, 189, 117);
+}
+
+.film-image {
+    grid-area: image;
+}
+
+.image-content {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.film-title {
+    grid-area: title;
+    justify-self: center;
+    text-transform: uppercase;
+    font-family: Russo One;
+    font-size: 200%;
+    text-decoration: none;
+    color: rgb(0, 110, 206);
+}
+
+.film-released {
+    grid-area: released;
+    font-family: Goudy Old Style;
+    justify-self: center;
+}
+
+.film-released h5 {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 100%;
+}
+
+.film-nation {
+    grid-area: nation;
+    justify-self: center;
+}
+
+.nation-image {
+    display: inline;
+    width: 50%;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+.film-desc {
+    font-size: 90%;
+    width: 100%;
+    font-family: Aldrich;
+}
+
+.film-button {
+    grid-area: button;
+    justify-self: center;
+    text-decoration: none;
+    margin: 15px auto;
+    font-size: 100%;
+    border: solid 0.5px;
+    font-family: Arial Black;
+    padding: 3px 15px;
+}
+
+.film-button *:hover {
+    text-decoration: none;
+    cursor: pointer;
+}

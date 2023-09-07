@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,700&display=swap');
+
+.navbar-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    margin: 0 auto 10px auto;
+    border-bottom: solid 0.5px;
+    width: 100%;
+}
+
+.navbar-menu {
+    margin: 20px;
+    font-family: DM Serif Display;
+    font-size: 150%;
+    padding: 5px;
+    flex-grow: 3;
+    flex-shrink: 0;
+}
+
+.navbar-items {
+    display: inline-block;
+    position: relative;
+    margin: 20px;
+    font-family: DM Serif Display;
+    padding: 0 5px;
+    text-decoration: none;
+    font-size: 80%;
+
+}
+
+.navbar-items:before {
+    content: "";
+    position: absolute;
+    background-color: rgb(255, 209, 139);
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease;
+}
+
+.navbar-items:hover {
+    color:rgb(255, 202, 164);
+}
+
+.navbar-items:hover:before {
+    width: 100%;
+}
+
+.navbar-brand {
+    flex-grow: 5;
+    font-family: Chakra Petch;
+    font-size: 250%;
+    flex-shrink: 0;
+    margin: 0 -300px 0 30px;
+}
+
+.theme-switch {
+    max-width: 50px;
+    justify-content: center;
+    flex-grow: 1;
+    flex-shrink: 0;
+}

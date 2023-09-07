@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans:ital@1&family=Caudex:wght@700&family=Thasadith&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
+
+.details-container {
+    display: grid;
+    grid-template-columns: 3fr 8fr;
+    grid-template-rows: 1fr 3fr 5fr 1fr;
+    grid-row-gap: 10px;
+    grid-column-gap: 30px;
+    grid-template-areas: 
+        "image title"
+        "image info"
+        "image desc"
+        "image button";
+    width: 100%;
+    max-height: 500px;
+    justify-content: center;
+}
+
+.details-image {
+    grid-area: image;
+    margin-left: 10px;
+}
+
+.details-title{
+    grid-area: title;
+    font-size: 300%;
+    font-family: 'Caudex', serif;
+    text-transform: uppercase;
+    align-items: start;
+}
+
+.details-info {
+    grid-area: info;
+    display: grid;
+    grid-template-columns: 5fr 3fr;
+    grid-template-rows: repeat(2);
+    grid-template-areas: 
+        "genre nation"
+        "year nation";
+    justify-content: start;
+    height: auto;
+    font-family: 'Alumni Sans', sans-serif;
+}
+
+.details-info .genre {
+    grid-area: genre;
+    font-size: 150%;
+}
+
+.details-info .year {
+    grid-area: year;
+    font-size: 120%;
+}
+
+.details-info .nation {
+    grid-area: nation;
+    justify-self: end;
+    margin-right: 10px;
+}
+
+.details-description {
+    font-family: 'League Gothic', sans-serif;
+    font-size: 200%;
+
+}
+
+.details-button {
+    grid-area: button;
+    justify-self: center;
+    align-items: end;
+}
