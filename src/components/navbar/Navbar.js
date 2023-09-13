@@ -1,8 +1,8 @@
 import React from 'react'
 import { useTheme, useThemeUpdate } from '../others/ThemeContext';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons'
-import { Link } from 'react-router-dom';
-import { FormControl, FormLabel } from '@chakra-ui/react';
+import { NavLink } from 'react-router-dom';
+import { FormControl, FormLabel, Image } from '@chakra-ui/react';
 import "./Navbar.css"
 
 export default function Navigation() {
@@ -15,29 +15,38 @@ export default function Navigation() {
     return (
         <div className='navbar-container' style={navThemeStyles}>
             <div className='navbar-brand'>
-                <Link to='/'>THE CINEMA</Link>
+                <NavLink to='/'>THE CINEMA</NavLink>
             </div>
 
             <div className='navbar-menu'>
-                <Link to="/">
+                <NavLink to="/">
                     <h1 className='navbar-items'>Home</h1>
-                </Link>
-                <Link to="/about">
+                </NavLink>
+                <NavLink to="/about">
                     <h1 className='navbar-items'>About</h1>
-                </Link>
-                <Link to="/news">
+                </NavLink>
+                <NavLink to="/news">
                     <h1 className='navbar-items'>News</h1>
-                </Link>
-                <Link to="/contact">
+                </NavLink>
+                <NavLink to="/contact">
                     <h1 className='navbar-items'>Contact</h1>
-                </Link>
+                </NavLink>
             </div>
 
-            <FormControl display='flex' alignItems='center' className='theme-switch'>
-                <FormLabel mb='0' onClick={toggleTheme} style={{ cursor: 'pointer' }}>
-                    {darkTheme ? <MoonIcon boxSize={8} /> : <SunIcon boxSize={8} />}
-                </FormLabel>
-            </FormControl>
+            <div className='navbar-end'>
+                <span>
+                    <NavLink to='/login'>
+                        <Image src='https://cdn-icons-png.flaticon.com/512/1144/1144760.png' id='user' alt='user' />
+                    </NavLink>
+                </span>
+                <span>
+                    <FormControl display='flex' alignItems='center' className='theme-switch'>
+                        <FormLabel mb='0' onClick={toggleTheme} style={{ cursor: 'pointer' }}>
+                            {darkTheme ? <MoonIcon boxSize={8} /> : <SunIcon boxSize={8} />}
+                        </FormLabel>
+                    </FormControl>
+                </span>
+            </div>
         </div>
     )
 }

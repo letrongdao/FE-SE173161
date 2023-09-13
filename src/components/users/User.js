@@ -19,7 +19,7 @@ export default function User() {
             {!user.loading && user.users.length ? (
                 <ul>
                     {user.users.map(user => (
-                        <li key={user.id}>{user.firstName}</li>
+                        <li key={user.id}>{user.email}</li>
                     ))}
                 </ul>
             ) : null}

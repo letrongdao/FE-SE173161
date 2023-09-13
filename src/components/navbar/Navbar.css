@@ -21,6 +21,10 @@
     flex-shrink: 0;
 }
 
+.navbar-menu a.active {
+    color:rgb(255, 202, 164);
+}
+
 .navbar-items {
     display: inline-block;
     position: relative;
@@ -53,15 +57,26 @@
 
 .navbar-brand {
     flex-grow: 5;
-    font-family: Chakra Petch;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 250%;
     flex-shrink: 0;
     margin: 0 -300px 0 30px;
 }
 
-.theme-switch {
-    max-width: 50px;
+.navbar-end {
+    display: flex;
+    max-width: 120px;
     justify-content: center;
     flex-grow: 1;
     flex-shrink: 0;
+}
+
+#user {
+    max-width: 35px;
+}
+
+.navbar-end span {
+    display: inline-block;
+    width: fit-content;
+    margin: auto 10px;
 }

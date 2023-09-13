@@ -5,7 +5,9 @@ import NotFound from "./components/others/NotFound";
 import FilmDetails from "./components/films/FilmDetails";
 import About from './components/others/About'
 import News from './components/others/News'
-import User from "./components/users/User";
+import Contact from "./components/contacts/Contact";
+import Login from './components/login/Login'
+import Success from "./components/contacts/Success";
 
 function App() {
   return (
@@ -17,7 +19,9 @@ function App() {
         </Route>
         <Route path="/about" element={<About />} />
         <Route path="/news" element={<News />} />
-        <Route path="/contact" element={<User />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/success" element={<Success />} />
+        <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </ThemeProvider>

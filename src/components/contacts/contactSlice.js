@@ -3,36 +3,36 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
 const initialState = {
     loading: false,
-    users: [],
+    contacts: [],
     error: ''
 }
 
-export const fetchUsers = createAsyncThunk('user/fetchUsers', () => {
+export const fetchContacts = createAsyncThunk('contact/fetchContacts', () => {
     return axios
     .get('https://64e5781c09e64530d17e95b3.mockapi.io/contacts')
     .then(response => response.data)
 })
 
-export const userSlice = createSlice({
-    name: 'user',
+export const contactSlice = createSlice({
+    name: 'contact',
     initialState,
     extraReducers: builder => {
-        builder.addCase(fetchUsers.pending, state => {
+        builder.addCase(fetchContacts.pending, state => {
             state.loading = true
         })
 
-        builder.addCase(fetchUsers.fulfilled, (state,action) => {
+        builder.addCase(fetchContacts.fulfilled, (state,action) => {
             state.loading = false
-            state.users = action.payload
+            state.contacts = action.payload
             state.error = ''
         })
 
-        builder.addCase(fetchUsers.rejected, (state,action) => {
+        builder.addCase(fetchContacts.rejected, (state,action) => {
             state.loading = false
-            state.users = []
+            state.contacts = []
             state.error = action.error.message
         })
     }
 })
 
-export default userSlice.reducer
+export default contactSlice.reducer
