@@ -8,12 +8,9 @@ import "./Navbar.css"
 export default function Navigation() {
     const darkTheme = useTheme()
     const toggleTheme = useThemeUpdate()
-    const navThemeStyles = {
-        backgroundColor: darkTheme ? 'rgb(171, 102, 50)' : 'rgb(196, 131, 71)',
 
-    }
     return (
-        <div className='navbar-container' style={navThemeStyles}>
+        <div className='navbar-container'>
             <div className='navbar-brand'>
                 <NavLink to='/'>THE CINEMA</NavLink>
             </div>
@@ -42,7 +39,7 @@ export default function Navigation() {
                 <span>
                     <FormControl display='flex' alignItems='center' className='theme-switch'>
                         <FormLabel mb='0' onClick={toggleTheme} style={{ cursor: 'pointer' }}>
-                            {darkTheme ? <MoonIcon boxSize={8} /> : <SunIcon boxSize={8} />}
+                            {darkTheme ? <MoonIcon boxSize={8} /> : <SunIcon boxSize={8} color='white'/>}
                         </FormLabel>
                     </FormControl>
                 </span>

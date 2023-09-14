@@ -19,10 +19,6 @@
     justify-content: start;
 }
 
-.film-item:hover {
-    background-color: rgb(186, 189, 117);
-}
-
 .film-image {
     grid-area: image;
 }
@@ -40,7 +36,7 @@
     font-family: Russo One;
     font-size: 200%;
     text-decoration: none;
-    color: rgb(0, 110, 206);
+    color: #3dc0b8;
 }
 
 .film-released {
@@ -82,9 +78,9 @@
     border: solid 0.5px;
     font-family: Arial Black;
     padding: 3px 15px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .film-button *:hover {
-    text-decoration: none;
     cursor: pointer;
 }

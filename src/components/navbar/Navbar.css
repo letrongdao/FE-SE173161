@@ -10,11 +10,13 @@
     margin: 0 auto 10px auto;
     border-bottom: solid 0.5px;
     width: 100%;
+    background-color: #22668D;
 }
 
 .navbar-menu {
     margin: 20px;
     font-family: DM Serif Display;
+    color: #FFF;
     font-size: 150%;
     padding: 5px;
     flex-grow: 3;
@@ -22,7 +24,7 @@
 }
 
 .navbar-menu a.active {
-    color:rgb(255, 202, 164);
+    color: #8ECDDD;
 }
 
 .navbar-items {
@@ -39,7 +41,7 @@
 .navbar-items:before {
     content: "";
     position: absolute;
-    background-color: rgb(255, 209, 139);
+    background-color: #8ECDDD;
     height: 3px;
     width: 0;
     left: 0;
@@ -48,7 +50,7 @@
 }
 
 .navbar-items:hover {
-    color:rgb(255, 202, 164);
+    color: #8ECDDD;
 }
 
 .navbar-items:hover:before {
@@ -61,6 +63,7 @@
     font-size: 250%;
     flex-shrink: 0;
     margin: 0 -300px 0 30px;
+    color: #FFF;
 }
 
 .navbar-end {

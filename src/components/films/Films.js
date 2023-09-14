@@ -24,7 +24,7 @@ export default function Films({ films }) {
 
     const darkTheme = useTheme()
     const themeStyles = {
-        backgroundColor: darkTheme ? "#333" : "rgb(235, 235, 235)",
+        backgroundColor: darkTheme ? "#001C30" : "#FFFADD",
         color: darkTheme ? "#FFF" : "#333",
     }
     

@@ -5,7 +5,7 @@ import NotFound from "./components/others/NotFound";
 import FilmDetails from "./components/films/FilmDetails";
 import About from './components/others/About'
 import News from './components/others/News'
-import Contact from "./components/contacts/Contact";
+import Contact from './components/contacts/Contact';
 import Login from './components/login/Login'
 import Success from "./components/contacts/Success";
 

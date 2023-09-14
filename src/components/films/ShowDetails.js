@@ -1,20 +1,45 @@
 import React from 'react'
 import './ShowDetails.css'
-import { Button, Img, Text } from '@chakra-ui/react'
+import {
+    Button,
+    Img,
+    Text,
+    Modal,
+    ModalOverlay,
+    ModalContent,
+    ModalBody,
+    useDisclosure,
+} from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom'
 import { ChevronLeftIcon } from '@chakra-ui/icons'
 import Navbar from '../navbar/Navbar'
 import { useTheme } from '../others/ThemeContext'
+import Youtube from 'react-youtube'
 
 export default function ShowDetails({ film }) {
     const navigate = useNavigate()
+
+    const { isOpen, onOpen, onClose } = useDisclosure()
+
+    const opts = {
+        height: '450',
+        width: '700',
+        playerVars: {
+            autoplay: 1,
+        },
+    }
+    const onPlayerReady = (event) => {
+        event.target.playVideo()
+    }
+
     const darkTheme = useTheme()
     const themeStyles = {
         backgroundColor: darkTheme ? "#333" : "#FFF",
         color: darkTheme ? "#FFF" : "#333",
     }
+
     return (
-        <div style={themeStyles}>
+        <div style={themeStyles} >
             <Navbar />
             <div className='details-container' style={themeStyles}>
                 <div className='details-image'>
@@ -36,10 +61,15 @@ export default function ShowDetails({ film }) {
                     </span>
                 </div>
                 <div className='details-button'>
+                    <Button onClick={onOpen}
+                        colorScheme='blue'>
+                        Watch trailer
+                    </Button>
+
                     <Button onClick={() => {
                         navigate('/')
                     }}
-                        colorScheme='teal'>
+                        colorScheme='gray'>
                         <ChevronLeftIcon />
                     </Button>
                 </div>
@@ -47,6 +77,18 @@ export default function ShowDetails({ film }) {
                     <Text>{film.description}</Text>
                 </div>
             </div>
+            <Modal isOpen={isOpen} onClose={onClose}>
+                <ModalOverlay>
+                    <ModalContent
+                        bgColor={'transparent'}
+                        minWidth='fit-content'
+                        height='fit-content'>
+                        <ModalBody>
+                            <Youtube videoId={film.trailer} opts={opts} onReady={onPlayerReady} />
+                        </ModalBody>
+                    </ModalContent>
+                </ModalOverlay>
+            </Modal>
         </div>
     )
 }

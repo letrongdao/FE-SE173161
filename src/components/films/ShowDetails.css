@@ -62,11 +62,17 @@
 .details-description {
     font-family: 'League Gothic', sans-serif;
     font-size: 200%;
-
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .details-button {
     grid-area: button;
     justify-self: center;
     align-items: end;
+}
+
+.details-button * {
+    margin: 0 5px;
 }
